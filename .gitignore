@@ -1,3 +1,7 @@
+# Target and Eclipse files
+target/
+
+
 # Compiled class file
 *.class
 
