@@ -1,2 +1,2 @@
 # selenium
-Trying Way2Automation
+Trying AutomationPractice.com
