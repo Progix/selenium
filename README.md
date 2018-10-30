@@ -1,2 +1,2 @@
-# selenium
+# Selenium
 Trying AutomationPractice.com
