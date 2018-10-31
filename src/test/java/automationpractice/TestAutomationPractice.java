@@ -17,7 +17,7 @@ public class TestAutomationPractice {
 	
 	@Test
 	public void testLogin() throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "/home/p/Softwares/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "//Users//devkey//Softwares//chromedriver");
 		ChromeOptions chromeOptions = new ChromeOptions();
 		driver = new ChromeDriver(chromeOptions);
 		
