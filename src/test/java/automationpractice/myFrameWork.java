@@ -18,7 +18,7 @@ public class myFrameWork {
 	public myFrameWork(WebDriver driver,String url) {
 		
 		
-		driver = this.driver;
+		this.driver = driver;
 		driver.get(url);
 		
 	}
@@ -52,16 +52,39 @@ public class myFrameWork {
 		
 	}
 	
-	public void AddToCart()
+	public void AddToCart() throws InterruptedException
 	{
-		//WebElement element = driver.findElement(By.xpath("//*[@id='center_column']/ul/li/div/div[1]/div/a[1]/img"));
-		WebElement element = driver.findElement(By.cssSelector("link[href='http://schema.org/InStock']"));
+		WebElement element = driver.findElement(By.xpath("//*[@id='center_column']/ul/li/div/div[1]/div/a[1]/img"));
+		//WebElement element = driver.findElement(By.cssSelector("link[href='http://schema.org/InStock']"));
 		
 		System.out.printf("Found Element {}",element.toString());
 		
 		Actions action = new Actions (driver);
 		action.moveToElement(element);
+		action.build().perform();
 		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]")).click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//*[@id='layer_cart']/div[1]/div[2]/div[4]/a")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='center_column']/p[2]/a[1]")).click();
+		Thread.sleep(2000);
+
+		driver.findElement(By.name("processAddress")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("cgv")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.name("processCarrier")).click();
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//*[@id='HOOK_PAYMENT']/div[2]/div/p/a")).click();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[@id='cart_navigation']/button")).click();
+		
+		driver.findElement(By.linkText("Sign out")).click();
 		// driver.findElement(By.xpath("//*[@id='center_column']/ul/li/div/div[2]/div[2]/a[1]")).click();*/
 		
 			

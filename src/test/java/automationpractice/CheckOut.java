@@ -26,7 +26,7 @@ public class CheckOut {
 		Thread.sleep(10000);
 		
 		frameWork.AddToCart();
-		//System.out.println("Added to Cart");
+		//System.out.println("Added to Cart");s
 		
 		
 		
